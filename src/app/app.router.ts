@@ -1,27 +1,31 @@
-import {Router, Routes, RouterModule} from "@angular/router";
+import {Routes, RouterModule} from "@angular/router";
 import {UserPage} from "./view/user/user.page";
-import {UserService} from "./service/User.service";
-
+import {NgModule} from '@angular/core';
+import {IndexPage} from "./view/index/index.page";
 
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo:'/home',
-        pathMatch:'full'
+        redirectTo: '/home',
+        pathMatch: 'full'
 
-    },{
+    }, {
         path: 'home',
-        component: UserPage,
+        component: IndexPage,
         children: [
             {
                 path: 'user',
+                component: UserPage,
             }
         ]
     }
 ]
 
 
-export const routingProviders: any[] = [UserService]
-
-export const routing = RouterModule.forRoot(routes);
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule {
+}

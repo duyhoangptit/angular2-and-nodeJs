@@ -4,7 +4,7 @@ import {Component, OnInit} from "@angular/core";
     templateUrl: 'index.page.html'
 })
 
-export class IndexComponent implements OnInit {
+export class IndexPage implements OnInit {
     ngOnInit(): void {
     }
 
