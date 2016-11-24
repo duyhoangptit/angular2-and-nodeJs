@@ -3,7 +3,6 @@ import {UserPage} from "./view/user/user.page";
 import {NgModule} from '@angular/core';
 import {IndexPage} from "./view/index/index.page";
 
-
 const routes: Routes = [
     {
         path: '',
@@ -20,7 +19,7 @@ const routes: Routes = [
             }
         ]
     }
-]
+];
 
 
 @NgModule({

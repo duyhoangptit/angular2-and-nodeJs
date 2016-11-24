@@ -2,7 +2,7 @@ import {Component, AfterViewInit} from "@angular/core";
 declare var App: any;
 
 @Component({
-    selector: '',
+    selector: 'my-app',
     template: '<router-outlet></router-outlet>'
 })
 

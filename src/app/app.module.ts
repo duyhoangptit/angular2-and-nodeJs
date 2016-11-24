@@ -1,4 +1,3 @@
-
 import {NgModule} from "@angular/core";
 import {HttpModule} from "@angular/http";
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
@@ -7,19 +6,19 @@ import {UserPage} from "./view/user/user.page";
 import {AppComponent} from "./app.component";
 import {UserService} from "./service/User.service";
 import {IndexPage} from "./view/index/index.page";
-import {HeaderComponent} from "./view/header/header.component.js";
-import {FooterComponent} from "./view/footer/footer.component.js";
+import {HeaderComponent} from "./view/header/header.component.ts";
+import {FooterComponent} from "./view/footer/footer.component.ts";
 import {AppRoutingModule} from "./app.router";
 @NgModule({
 
-    imports:[
+    imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
         AppRoutingModule
     ],
-    declarations:[
+    declarations: [
         /*Component Page*/
         HeaderComponent,
         FooterComponent,
@@ -27,10 +26,10 @@ import {AppRoutingModule} from "./app.router";
         /*Component View*/
         UserPage,
     ],
-    bootstrap: [AppComponent],
-    providers:[
+    providers: [
         UserService
-    ]
+    ],
+    bootstrap: [AppComponent],
 })
 export class AppModule {
 }
