@@ -15,7 +15,7 @@ export class UserService extends CommonService {
 
     // create
     public createUser(user: User): Promise<User> {
-        return this.postApi("/userCreate/", user)
+        return this.postApi(this.SERVER + "/createUser/", user)
             .then((data) => {
                 return data;
             });
@@ -41,10 +41,7 @@ export class UserService extends CommonService {
 
     // find all user
     public findAllUser(): Promise<Array<User>> {
-        $.get(this.SERVER + "/userFindAll/").done(function (data) {
-            console.log(data);
-        });
-        return this.getApi(this.SERVER + "/userFindAll/")
+        return this.getApi(this.SERVER + "/findAllUser/")
             .then((data)=> {
                 let users = new Array<User>();
                 for (var i = 0; i < data.length; i++) {
