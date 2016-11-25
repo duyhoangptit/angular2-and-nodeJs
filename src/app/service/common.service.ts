@@ -24,7 +24,7 @@ export class CommonService {
             })
             .then((body)=> {
                 if (body["error"] == undefined) {
-                    return body["data"];
+                    return body;
                 } else {
                     throw body["error"];
                 }

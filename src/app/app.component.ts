@@ -9,6 +9,6 @@ declare var App: any;
 export class AppComponent implements AfterViewInit{
     ngAfterViewInit(): void {
         console.log("started");
-        App.loader('hide');
+        // App.loader('hide');
     }
 }

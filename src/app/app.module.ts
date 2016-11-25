@@ -9,6 +9,8 @@ import {IndexPage} from "./view/index/index.page";
 import {HeaderComponent} from "./view/header/header.component.ts";
 import {FooterComponent} from "./view/footer/footer.component.ts";
 import {AppRoutingModule} from "./app.router";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {ContentComponent} from "./view/content/content.component";
 @NgModule({
 
     imports: [
@@ -19,16 +21,20 @@ import {AppRoutingModule} from "./app.router";
         AppRoutingModule
     ],
     declarations: [
+
+        IndexPage,
+        AppComponent,
         /*Component Page*/
         HeaderComponent,
         FooterComponent,
-        IndexPage,
+        ContentComponent,
         /*Component View*/
         UserPage,
     ],
     providers: [
-        UserService
-    ],
+        // find component
+        {provide: LocationStrategy, useClass: HashLocationStrategy},
+        UserService],
     bootstrap: [AppComponent],
 })
 export class AppModule {
