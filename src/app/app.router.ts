@@ -2,6 +2,9 @@ import {Routes, RouterModule} from "@angular/router";
 import {UserPage} from "./view/user/user.page";
 import {NgModule} from '@angular/core';
 import {IndexPage} from "./view/index/index.page";
+import {ContentComponent} from "./view/content/content.component";
+import {UserResolve} from "./resolve/User.resolve";
+import {UserService} from "./service/User.service";
 
 const routes: Routes = [
     {
@@ -14,8 +17,14 @@ const routes: Routes = [
         component: IndexPage,
         children: [
             {
+                path: '',
+                component: ContentComponent,
+            },
+            {
                 path: 'user',
-                component: UserPage,
+                component: UserPage
+                // ,
+                // resolve: {users :UserResolve},
             }
         ]
     }
@@ -26,5 +35,6 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
+
 export class AppRoutingModule {
 }

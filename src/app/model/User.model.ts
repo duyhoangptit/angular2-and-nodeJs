@@ -10,7 +10,7 @@ export class User{
     /* email */
     public email: string;
 
-    public setComment(data: any){
+    public setUser(data: any){
         this.id = data["id"];
         this.username = data["username"];
         this.password = data["password"];
