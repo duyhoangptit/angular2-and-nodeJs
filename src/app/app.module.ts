@@ -8,9 +8,9 @@ import {UserService} from "./service/User.service";
 import {IndexPage} from "./view/index/index.page";
 import {HeaderComponent} from "./view/header/header.component.ts";
 import {FooterComponent} from "./view/footer/footer.component.ts";
-import {AppRoutingModule} from "./app.router";
-import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {ContentComponent} from "./view/content/content.component";
+import {RouterModule} from "@angular/router";
+import {routes} from "./app.router";
 @NgModule({
 
     imports: [
@@ -18,7 +18,8 @@ import {ContentComponent} from "./view/content/content.component";
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        AppRoutingModule
+        //config router url
+        RouterModule.forRoot(routes, { useHash: false })
     ],
     declarations: [
 
@@ -32,8 +33,6 @@ import {ContentComponent} from "./view/content/content.component";
         UserPage,
     ],
     providers: [
-        // find component
-        {provide: LocationStrategy, useClass: HashLocationStrategy},
         UserService],
     bootstrap: [AppComponent],
 })
