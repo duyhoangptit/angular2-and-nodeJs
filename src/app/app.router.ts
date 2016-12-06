@@ -1,7 +1,9 @@
-import {Routes} from "@angular/router";
-import {UserPage} from "./view/user/user.page";
+import {Routes, RouterModule} from "@angular/router";
+import {UserPage} from "./view/page/user/user.page";
 import {IndexPage} from "./view/index/index.page";
 import {ContentComponent} from "./view/content/content.component";
+import {UserResolve} from "./resolve/User.resolve";
+import {UserService} from "./service/User.service";
 
 export const routes: Routes = [
     {
@@ -19,13 +21,12 @@ export const routes: Routes = [
             },
             {
                 path: 'user',
-                component: UserPage
-                // ,
-                // resolve: {users :UserResolve},
+                component: UserPage,
+                resolve: {users :UserResolve},
             }
         ]
     }
 ];
 
-export const routingProviders: any[] = [];
+export const routingProviders: any[] = [UserResolve, UserService];
 

@@ -1,13 +1,13 @@
 import {Component, OnInit} from "@angular/core";
-import {UserService} from "../../service/User.service";
-import {User} from "../../model/User.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import any = jasmine.any;
+import {User} from "../../../model/User.model";
+import {UserService} from "../../../service/User.service";
 
 declare var $: any;
 
 @Component({
-    templateUrl: './user.page.html',
+    templateUrl: 'user.page.html',
     providers: [UserService]
 })
 
@@ -25,10 +25,7 @@ export class UserPage implements OnInit {
 
     }
     ngOnInit(): void {
-        // get data resolve call service api
-        this.userService.findAllUser().then(data=>{
-            this.users =data;
-        }).catch();
+        this.users = this.route.snapshot.data['users'];
         this.btnModal = "Create User";
         this.btnSubmit = "Submit";
         this.title = "Modal User";
