@@ -1,8 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
-.gitignore
+.idea/angular-webpack.iml
 .idea/jsLibraryMappings.xml
 .idea/modules.xml
-.idea/ui-angular2.iml
 .idea/workspace.xml
 dist/
 node_modules/
