@@ -50,9 +50,10 @@ export class UserPage implements OnInit {
         $('#myModal').modal('show');
     }
 
-    public deleteUser(item){
+    public deleteUser(index,item){
         this.userService.deleteUser(item.username).then(data=>{
-            this.users.splice(item);
+            // remove item in list item
+            this.users.splice(index, 1);
         }).catch();
     }
 }
