@@ -22,9 +22,10 @@ export class UserPage implements OnInit {
     view: boolean = false;
 
     constructor(private route: ActivatedRoute, private router: Router, private userService: UserService){
-
     }
+
     ngOnInit(): void {
+        // get data snapshot
         this.users = this.route.snapshot.data['users'];
         this.btnModal = "Create User";
         this.btnSubmit = "Submit";

@@ -1,9 +1,11 @@
-import {Routes, RouterModule} from "@angular/router";
+import {Routes} from "@angular/router";
 import {UserPage} from "./view/page/user/user.page";
 import {IndexPage} from "./view/index/index.page";
 import {ContentComponent} from "./view/content/content.component";
 import {UserResolve} from "./resolve/User.resolve";
 import {UserService} from "./service/User.service";
+import {PaginatorPage} from "./view/page/pagination/paginator.page";
+import {TemplatePage} from "./view/page/template/template.page";
 
 export const routes: Routes = [
     {
@@ -23,6 +25,18 @@ export const routes: Routes = [
                 path: 'user',
                 component: UserPage,
                 resolve: {users :UserResolve},
+            },
+            {
+                path: 'pagination',
+                component: PaginatorPage,
+            },
+            {
+                path: 'pagination',
+                component: PaginatorPage,
+            },
+            {
+                path: 'template',
+                component: TemplatePage,
             }
         ]
     }

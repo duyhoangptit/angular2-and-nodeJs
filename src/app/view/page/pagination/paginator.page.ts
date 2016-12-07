@@ -17,4 +17,8 @@ export class PaginatorPage implements OnInit {
     ngOnInit(): void {
     }
 
+    public pageChanged(event){
+
+    }
+
 }

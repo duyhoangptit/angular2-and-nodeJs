@@ -11,15 +11,20 @@ import {RouterModule} from "@angular/router";
 import {routes, routingProviders} from "./app.router";
 import {UserPage} from "./view/page/user/user.page";
 import {PaginatorPage} from "./view/page/pagination/paginator.page";
+import {Ng2PaginationModule} from 'ng2-pagination';
+import {TemplatePage} from "./view/page/template/template.page";
+
+
 @NgModule({
 
     imports: [
         BrowserModule,
+        Ng2PaginationModule,
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
         //config router url
-        RouterModule.forRoot(routes, { useHash: false })
+        RouterModule.forRoot(routes, {useHash: false})
     ],
     declarations: [
 
@@ -31,7 +36,8 @@ import {PaginatorPage} from "./view/page/pagination/paginator.page";
         ContentComponent,
         /*Component View*/
         UserPage,
-        PaginatorPage
+        PaginatorPage,
+        TemplatePage,
     ],
     providers: [routingProviders],
     bootstrap: [AppComponent],
